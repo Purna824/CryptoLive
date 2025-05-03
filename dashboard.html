@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Crypto Prices</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="dashboard.html">Dashboard</a>
+          <a href="trading.html">Trading</a>
+          <a href="portfolio.html">Portfolio</a>
+          <button id="theme-toggle">🌓 Change Theme</button>
+        </nav>
+      </header>
+
+  <main>
+    <div class="chart-card">
+      <div class="chart-title">Bitcoin (BTC/USDT)</div>
+      <iframe src="https://www.tradingview.com/widgetembed/?symbol=BINANCE:BTCUSDT&interval=60&theme=dark&style=1" allowfullscreen></iframe>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-title">Ethereum (ETH/USDT)</div>
+      <iframe src="https://www.tradingview.com/widgetembed/?symbol=BINANCE:ETHUSDT&interval=60&theme=dark&style=1" allowfullscreen></iframe>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-title">Solana (SOL/USDT)</div>
+      <iframe src="https://www.tradingview.com/widgetembed/?symbol=BINANCE:SOLUSDT&interval=60&theme=dark&style=1" allowfullscreen></iframe>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-title">Cardano (ADA/USDT)</div>
+      <iframe src="https://www.tradingview.com/widgetembed/?symbol=BINANCE:ADAUSDT&interval=60&theme=dark&style=1" allowfullscreen></iframe>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-title">Ripple (XRP/USDT)</div>
+      <iframe src="https://www.tradingview.com/widgetembed/?symbol=BINANCE:XRPUSDT&interval=60&theme=dark&style=1" allowfullscreen></iframe>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CryptoLive. All rights reserved.</p>
+    <p>Built for professional traders & enthusiasts.</p>
+  </footer>
+
+  <script>
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+</body>
+</html>

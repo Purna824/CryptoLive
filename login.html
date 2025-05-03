@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Authentication - Crypto Trading Platform</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .auth-container {
+      max-width: 400px;
+      margin: 4em auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 2em;
+      transition: 0.3s ease;
+    }
+
+    .auth-container h2 {
+      text-align: center;
+      margin-bottom: 1em;
+      color: #6d5bbe;
+    }
+
+    .auth-tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2em;
+    }
+
+    .auth-tabs button {
+      flex: 1;
+      padding: 0.6em;
+      border: none;
+      background: #eaeaea;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 8px 8px 0 0;
+      transition: background 0.2s ease;
+    }
+
+    .auth-tabs button.active {
+      background: #6d5bbe;
+      color: white;
+    }
+
+    .auth-form {
+      display: none;
+    }
+
+    .auth-form.active {
+      display: block;
+    }
+
+    .auth-form label {
+      display: block;
+      margin-bottom: 1em;
+    }
+
+    .auth-form input {
+      width: 100%;
+      padding: 0.7em;
+      font-size: 1em;
+      margin-top: 0.3em;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .auth-form button {
+      width: 100%;
+      padding: 0.8em;
+      background: #6d5bbe;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 1em;
+    }
+
+    .dark-mode .auth-container {
+      background: #2c2c2c;
+      color: white;
+    }
+
+    .dark-mode .auth-form input {
+      background: #444;
+      border: 1px solid #666;
+      color: white;
+    }
+
+    .dark-mode .auth-tabs button {
+      background: #555;
+      color: white;
+    }
+
+    .dark-mode .auth-tabs button.active {
+      background: #6d5bbe;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CryptoLive</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="trading.html">Trading</a>
+      <a href="portfolio.html">Portfolio</a>
+      <button id="theme-toggle">🌓 Change Theme</button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="auth-container">
+      <div class="auth-tabs">
+        <button id="login-tab" class="active">Login</button>
+        <button id="signup-tab">Signup</button>
+      </div>
+
+      <form id="login-form" class="auth-form active">
+        <h2>Login</h2>
+        <label>Email:
+          <input type="email" required />
+        </label>
+        <label>Password:
+          <input type="password" required />
+        </label>
+        <button type="submit">Login</button>
+      </form>
+
+      <form id="signup-form" class="auth-form">
+        <h2>Signup</h2>
+        <label>Username:
+          <input type="text" required />
+        </label>
+        <label>Email:
+          <input type="email" required />
+        </label>
+        <label>Password:
+          <input type="password" required />
+        </label>
+        <label>Confirm Password:
+          <input type="password" required />
+        </label>
+        <button type="submit">Signup</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+   <p>&copy; 2025 CryptoLive. All rights reserved.</p>
+    <p>Built for professional traders & enthusiasts.</p><
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Toggle theme already handled by main.js
+
+    // Tab switching logic
+    const loginTab = document.getElementById('login-tab');
+    const signupTab = document.getElementById('signup-tab');
+    const loginForm = document.getElementById('login-form');
+    const signupForm = document.getElementById('signup-form');
+
+    loginTab.addEventListener('click', () => {
+      loginTab.classList.add('active');
+      signupTab.classList.remove('active');
+      loginForm.classList.add('active');
+      signupForm.classList.remove('active');
+    });
+
+    signupTab.addEventListener('click', () => {
+      signupTab.classList.add('active');
+      loginTab.classList.remove('active');
+      signupForm.classList.add('active');
+      loginForm.classList.remove('active');
+    });
+
+    // Optional: Add simple handlers
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Login submitted!');
+    });
+
+    signupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Signup submitted!');
+    });
+  </script>
+</body>
+</html>

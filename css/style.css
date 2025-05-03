@@ -1,0 +1,266 @@
+/* ====================
+   Global Styles (Used in All Pages)
+   ==================== */
+   body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f2f2f2;
+    color: #6d5bbe;
+  }
+  
+  header, footer {
+    background: #8876c3;
+    color: white;
+    padding: 1em;
+    text-align: center;
+  }
+  
+  nav a {
+    margin: 0 1em;
+    color: #ccc;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    color: white;
+  }
+  
+  #theme-toggle {
+    margin-left: 1em;
+  }
+  
+  .dark-mode {
+    background-color: #3e3e3e;
+    color: #f5f5f5;
+  }
+  
+  .dark-mode header,
+  .dark-mode footer {
+    background-color: #434344;
+  }
+  
+  /* ====================
+     Index Page Only: Hero Section and Price Grid
+     ==================== */
+  #hero-section {
+    position: relative;
+    text-align: center;
+    margin: 2em 0;
+  }
+  
+  .hero-image {
+    background-image: url(../images/golden-bitcoin-coin-keyboard-stock-market-trading-chart-online-candlestick.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 400px;
+    max-height: 70vh;
+    position: relative;
+    opacity: 0.85;
+    border-radius: 12px;
+  }
+  
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1em 2em;
+    border-radius: 8px;
+  }
+  
+  .price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5em;
+    margin-top: 1em;
+    padding: 1em;
+  }
+  
+  .price-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1em;
+    text-align: center;
+    transition: transform 0.2s ease;
+  }
+  
+  .price-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .dark-mode .price-card {
+    background: #2c2c2c;
+    color: #f5f5f5;
+  }
+  
+  .coin-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 0.5em;
+  }
+  
+  .price-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    border-radius: 12px;
+  }
+  
+  .price-link:hover .price-card {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+ 
+  /* ====================
+     Trading Page Only: Order Form & Buttons
+     ==================== */
+  .order-form, .orders {
+    max-width: 600px;
+    margin: 2em auto;
+    padding: 1em;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .order-form label {
+    display: block;
+    margin-bottom: 1em;
+  }
+  
+  .order-form input, .order-form select {
+    width:95%;
+    padding: 0.5em;
+    font-size: 1em;
+  }
+  
+  .order-form button {
+    padding: 0.6em 1em;
+    font-size: 1em;
+    margin-top: 1em;
+    background: #4e73df;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .orders ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .orders li {
+    background: #f5f5f5;
+    margin-bottom: 0.5em;
+    padding: 0.8em;
+    border-radius: 6px;
+  }
+  
+  .dark-mode .order-form,
+  .dark-mode .orders {
+    background: #2c2c2c;
+    color: white;
+  }
+  
+  .dark-mode .orders li {
+    background: #444;
+  }
+  
+  .order-buttons {
+    display: flex;
+    gap: 1em;
+    margin-bottom: 1em;
+  }
+  
+  .buy-btn, .sell-btn {
+    flex: 1;
+    padding: 0.6em;
+    font-size: 1em;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.2s;
+  }
+  
+  .buy-btn {
+    background-color: #28a745;
+  }
+  
+  .sell-btn {
+    background-color: #dc3545;
+  }
+  
+  .buy-btn.active, .sell-btn.active {
+    opacity: 1;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  }
+
+  /* ===== Layout Helpers (Used Multiple Pages) ===== */
+  select {
+    padding: 0.5em;
+    font-size: 1em;
+    margin: auto;
+  }
+  
+  .order-lists {
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+    margin-top: 2em;
+  }
+  
+  .order-lists .orders {
+    flex: 1;
+  }
+  
+  
+  /* ====================
+     Possibly Unused Styles
+     ==================== */
+  /* .header, .logo, .nav, .theme-toggle */
+  /* These are not found in the HTML files and may be removed if not used later */
+  
+  :root {
+    --background: #ffffff;
+    --text-color: #000000;
+    --card-bg: #f9f9f9;
+  }
+  
+  body.dark {
+    --background: #121212;
+    --text-color: #ffffff;
+    --card-bg: #1e1e1e;
+  }
+  /* dashboard main section */
+  main {
+    padding: 2em;
+  }
+
+  .chart-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2em;
+  }
+
+  .chart-title {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+
+  iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    border-radius: 8px;
+  }

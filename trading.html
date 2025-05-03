@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trading UI</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Crypto Trading</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="trading.html">Trading</a>
+      <button id="theme-toggle">🌓 Change Theme</button>
+    </nav>
+  </header>
+  <main class="trading-container">
+    <section class="order-form">
+      <h2>Place Order</h2>
+      <p><strong>Balance:</strong> <span id="balance">$10,000.00</span></p>
+
+      <form id="trade-form">
+        <div class="inline-fields">
+          <label>
+            Type:
+            <select id="order-type">
+              <option value="market">Market</option>
+              <option value="limit">Limit</option>
+            </select>
+          </label>
+        </div>
+        <div class="order-buttons">
+            <button type="button" class="buy-btn" data-side="buy">Buy</button>
+            <button type="button" class="sell-btn" data-side="sell">Sell</button>
+          </div>
+          <input type="hidden" id="order-side" value="buy" />
+          
+  
+        <div class="inline-fields">
+          <label>
+            Amount:
+            <input type="number" id="amount" min="0.001" step="0.001" required />
+          </label>
+  
+          <label id="price-label" style="display: none;">
+            Price:
+            <input type="number" id="price" min="0.01" step="0.01" />
+          </label>
+        </div>
+  
+        <button type="submit">Place Order</button>
+      </form>
+    </section>
+  
+    <div class="order-lists">
+      <div class="orders open-orders">
+        <h3>Open Orders</h3>
+        <ul id="open-orders-list"></ul>
+      </div>
+    
+      <div class="orders closed-orders">
+        <h3>Closed Orders</h3>
+        <ul id="closed-orders-list"></ul>
+      </div>
+    </div>
+    
+  </main>
+  
+
+
+  <footer>
+    <p>&copy; 2025 CryptoLive. All rights reserved.</p>
+    <p>Built for professional traders & enthusiasts.</p>
+  </footer>
+
+  <script src="js/trading.js"></script>
+</body>
+</html>

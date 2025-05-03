@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Portfolio</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="trading.html">Trading</a>
+      <a href="portfolio.html">Portfolio</a>
+      <button id="theme-toggle">🌓 Change Theme</button>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="order-form">
+      <h2>Wallet Balances</h2>
+      <ul>
+        <li>Bitcoin (BTC): 0.5123</li>
+        <li>Ethereum (ETH): 4.231</li>
+        <li>USDT: 1,350.00</li>
+      </ul>
+    </section>
+
+    <section class="chart-container">
+      <h2>Portfolio Performance</h2>
+      <canvas id="portfolioChart" height="150"></canvas>
+    </section>
+
+    <section class="orders">
+      <h2>Transaction History</h2>
+      <ul>
+        <li>🟢 Bought 0.5 BTC - $14,000 on 2025-03-21</li>
+        <li>🔴 Sold 2 ETH - $3,000 on 2025-04-12</li>
+        <li>🟢 Bought 300 USDT - $300 on 2025-04-25</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CryptoLive. All rights reserved.</p>
+    <p>Built for professional traders & enthusiasts.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    const ctx = document.getElementById('portfolioChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+        datasets: [{
+          label: 'Portfolio Value (USD)',
+          data: [1000, 1200, 1100, 1450, 1600],
+          backgroundColor: 'rgba(109,91,190,0.2)',
+          borderColor: '#6d5bbe',
+          borderWidth: 2,
+          fill: true,
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            labels: {
+              color: getComputedStyle(document.body).color
+            }
+          }
+        },
+        scales: {
+          x: {
+            ticks: { color: getComputedStyle(document.body).color }
+          },
+          y: {
+            ticks: { color: getComputedStyle(document.body).color }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
