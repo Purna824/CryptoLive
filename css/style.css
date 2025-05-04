@@ -119,90 +119,71 @@
   /* ====================
      Trading Page Only: Order Form & Buttons
      ==================== */
-  .order-form, .orders {
-    max-width: 600px;
-    margin: 2em auto;
-    padding: 1em;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-  }
   
-  .order-form label {
-    display: block;
-    margin-bottom: 1em;
-  }
-  
-  .order-form input, .order-form select {
-    width:95%;
-    padding: 0.5em;
-    font-size: 1em;
-  }
-  
-  .order-form button {
-    padding: 0.6em 1em;
-    font-size: 1em;
-    margin-top: 1em;
-    background: #4e73df;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
-  .orders ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .orders li {
-    background: #f5f5f5;
-    margin-bottom: 0.5em;
-    padding: 0.8em;
-    border-radius: 6px;
-  }
-  
-  .dark-mode .order-form,
-  .dark-mode .orders {
-    background: #2c2c2c;
-    color: white;
-  }
-  
-  .dark-mode .orders li {
-    background: #444;
-  }
-  
-  .order-buttons {
-    display: flex;
-    gap: 1em;
-    margin-bottom: 1em;
-  }
-  
-  .buy-btn, .sell-btn {
-    flex: 1;
-    padding: 0.6em;
-    font-size: 1em;
-    border: none;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    opacity: 0.5;
-    transition: 0.2s;
-  }
-  
-  .buy-btn {
-    background-color: #28a745;
-  }
-  
-  .sell-btn {
-    background-color: #dc3545;
-  }
-  
-  .buy-btn.active, .sell-btn.active {
-    opacity: 1;
-    font-weight: bold;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  }
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form label,
+form select,
+form input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.buy-btn,
+.sell-btn {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  opacity: 1;
+}
+
+.buy-btn {
+  background-color: green;
+}
+
+.sell-btn {
+  background-color: red;
+}
+
+.buy-btn.active,
+.sell-btn.active {
+  box-shadow: 0 0 5px #000;
+}
+
+.orders {
+  margin-top: 20px;
+}
+
+.orders ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
 
   /* ===== Layout Helpers (Used Multiple Pages) ===== */
   select {
